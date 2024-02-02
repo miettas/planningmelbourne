@@ -58,6 +58,4 @@ Route::get('SearchPlaces', [App\Http\Controllers\SearchController::class, 'searc
 
 require __DIR__.'/auth.php';
 
-Auth::routes();
-
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');

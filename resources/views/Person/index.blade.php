@@ -47,5 +47,5 @@
 {!! $people->render() !!}
 
 
-@endsection
+@stop
 
