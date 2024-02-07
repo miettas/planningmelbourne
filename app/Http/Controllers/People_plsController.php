@@ -14,7 +14,7 @@ class People_plsController extends Controller
      * @return \Illuminate\Http\Response
      */
     public function index()
-    {dd("hello";
+    {
         $people = People_pl::with('article')->simplePaginate(12); 
         return view('Person.index', compact('people'));
     }
