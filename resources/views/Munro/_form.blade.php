@@ -6,16 +6,16 @@
 			{{ html()->text('amname')->size('40%') }}
 		</p><p>
 			Chapter ID:<br />
-			{{ html()->text('chapters_pl_chapid')->size('40%') }}	
+			{{ html()->text('chapters_pl_chapid')->size('40%') }}
 		</p><p>
 			Book ID:<br />
-			{{ html()->text('books_pl_bkid')->size('40%') }}	
+			{{ html()->text('books_pl_bkid')->size('40%') }}
 		</p><p>
 			Page Description:<br />
-			{{ html()->text('amdescription') ->size('40%')}}																
+			{{ html()->text('amdescription') ->size('40%')}}
 		</p><p>
 			Chapter Name:<br />
-			{{ html()->text('amchapter')->size('40%') }}	
+			{{ html()->text('amchapter')->size('40%') }}
 		</p>
 	
 	</div>

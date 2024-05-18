@@ -14,6 +14,11 @@ class Directories_pl extends Model
     protected $primaryKey = 'dirid';
    
    protected $fillable = ['dname','infoCol1','infoCol2','infoCol3','headlineCol1','headlineCol2','headlineCol3','dirImage','dirCaption','dirDescription'];
+
+   
+
+
+
    
    /**
     * @var array

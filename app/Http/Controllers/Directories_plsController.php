@@ -7,6 +7,9 @@ use App\Models\Chapters_pl;
 use App\Models\Page;
 use App\Models\Books_pl;
 use App\Models\Directories_pl;
+use App\Models\Article;
+use App\Models\People_pl;
+
 
 
 class Directories_plsController extends Controller
@@ -46,7 +49,7 @@ class Directories_plsController extends Controller
      * @return \Illuminate\Http\Response
      */
     public function show($dir)
-    {dd($dir);
+    {
         $directory = Directories_pl::findOrFail($dir);
         //list($prevPage,$nextPage) = nextBook('App\Models\Directory','dirid',$directory->dirid,'dirid');
         return view('Directory.show', compact(['directory']));
@@ -67,8 +70,7 @@ class Directories_plsController extends Controller
 
     /**
      * Update the specified resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
+     *11111
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
@@ -92,6 +94,32 @@ class Directories_plsController extends Controller
     public function welcome()
     {
         $directory = Directories_pl::where('dirid',4)->first();
-        return view('Directory.show', compact(['directory']));
+        
+        $arr = []; $filearray = []; $file =[]; $array = []; $array1=[];
+       
+        if($directory->infoCol2){
+
+            $table = 'App\Models\Article';
+            $id = 'artid';
+            for ($x = 0; $x < 3; $x++){ 
+                $file = random($table, $id, '','');
+                $ary = getImage($file,'');
+                array_push($array,$ary);
+            }
+            array_push($array,$filearray);
+        }
+        if($directory->infoCol3){
+            $table = 'App\Models\People_pl';
+            $id = 'ppid';
+            for ($x = 0; $x < 3; $x++){ 
+                $file = random($table, $id, 'journalist');
+                $ary = getImage($file,'journalist'); 
+                array_push($array1,$ary);
+            }
+            array_push($array1,$filearray);
+        }
+       
+   
+    return view('Directory.show', compact(['directory']))->with('array', $array)->with('array1', $array1);
     }
-}
+} 

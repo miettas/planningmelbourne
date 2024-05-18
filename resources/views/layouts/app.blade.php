@@ -14,7 +14,7 @@
     <link rel="dns-prefetch" href="https://fonts.gstatic.com">
     <link href="https://fonts.googleapis.com/css?family=Raleway:300,400,600" rel="stylesheet" type="text/css">
     <script src="https://code.jquery.com/jquery-3.7.1.min.js" integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
-    @vite(['resources/scss/app.scss', 'resources/scss/knox.scss', 'resources/scss/app.scss', 'resources/scss/bankgothic_medium.scss'])
+    @vite(['resources/scss/app.scss', 'resources/scss/knox.scss', 'resources/scss/bankgothic_medium.scss','resources/js/app.js', 'resources/js/picturefill.min.js'])
 
 </head>
 <body>

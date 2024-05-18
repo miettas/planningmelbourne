@@ -1,57 +1,70 @@
 @extends('layouts/app')
 
 @section('content')
-
-    @if($directory->dirid == 4)
-        <div class="row">
-            <div class="col-12">
-                <figure class="figure">
-                    {!! $directory->dirImage !!}
-                    <figcaption class="figure-caption">Collins Street, 1991. <i>Photo Tony Knox</i></figcaption>
-                </figure>
-            </div>
-        </div>
+@php $info = ''; $info2 = ''; @endphp
+<div class="row">
+    @if($directory->dirid == 4)   
+        <figure class="figure">
+            {!! $directory->dirImage !!}
+            <figcaption class="figure-caption">Collins Street, 1991. <i>Photo Tony Knox</i></figcaption>
+        </figure>
     @endif
-    
-    <div class="row">
 
     <!-- left column -->
-        @if($directory->infoCol1)
-            <div class="col-sm">
-
+        <div class="col-sm">
+            @if($directory->infoCol1)
                 <h4>{!! $directory->headlineCol1 !!}</h4>
                 {!! $directory->infoCol1 !!}
-
-            </div>
-        @endif
+            @endif
+        </div>
 
     <!-- centre column -->
-        @if($directory->infoCol2)
-            <div class="col-sm">
-                
-                <h4>{!! $directory->headlineCol2 !!}</h4>
-                {!! $directory->infoCol2 !!}
-        
-            </div>
-        @endif
+        <div class="col-sm">
+            @if($directory->infoCol2)
 
-    <!-- right column -->
-        @if($directory->infoCol3)
-            <div class="col-sm">
+                <h4>{!! $directory->headlineCol2 !!}</h4>
+
+                @for( $i=0; $i<3; $i++ )
+
+                    <h5>{{ $array[$i][0]->headline }}</h5>
+
+                        @if(strlen($array[$i][1])) 
+                            {!! $array[$i][1] !!}<br />
+                        @endif
+                        @if(strlen($array[$i][3]))
+                            {!! $array[$i][3] !!}<br />
+                        @endif
+                    <p>
+                        {!! $array[$i][2] !!}
+                    </p>
+                @endfor
+          @endif 
+        </div>
+    
+        <!-- right column -->
+        <div class="col-sm">
+            @if($directory->infoCol3)
 
                 <h4>{!! $directory->headlineCol3 !!}</h4>
-                {!! $directory->infoCol3 !!}
+                @for( $i=0; $i<3; $i++ )
 
-            </div>
-        @endif
-            
+                    <h5>{{ $array1[$i][0]->first }} {{ $array1[$i][0]->last }}</h5>
+
+                    @if(strlen($array[$i][1]))
+                        {!! $array1[$i][1] !!}<br />
+                    @endif
+                    @if(strlen($array1[$i][3]))
+                        {!! $array1[$i][3] !!}<br />
+                    @endif
+                    <p>
+                        {!! $array1[$i][2] !!}
+                    </p>
+                @endfor
+
+            @endif 
+
     </div>
-    <br />
+</div>
 
-    @if($directory->dirid != 4)
-        @if (Auth::check())
-            <a href="{{url("directories/$directory->dirid]/edit") }}">( Edit )</a>
-        @endif
-    @endif
 
 @stop

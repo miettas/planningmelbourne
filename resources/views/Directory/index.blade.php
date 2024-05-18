@@ -11,7 +11,6 @@
 
 			@foreach ($directory as $dir)
 				<p>{!! $dir->headlineCol1 !!}, {!! $dir->headlineCol2 !!}, {!! $dir->headlineCol3 !!}</p> 
-
 			@endforeach
 
 		</div>

@@ -7,11 +7,10 @@ export default defineConfig({
         laravel({
             input: [
                 'resources/scss/app.scss',
-                'resources/js/app.js',
-                'resources/scss/app.scss',
                 'resources/scss/knox.scss',
-                'resources/js/picturefill.min.js',
                 'resources/scss/bankgothic_medium.scss',
+                'resources/js/app.js',
+                'resources/js/picturefill.min.js',
             ],
             refresh: true,
         }),
