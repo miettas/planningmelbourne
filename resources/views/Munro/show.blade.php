@@ -23,10 +23,9 @@
 	<div class="col" style="max-width:520px;">		
 		@include('includes.searches', ['tble' => 'SearchMunros'])
 		<h3>{!! $page->amchapter !!}</h3>
-
 		<table width="100%" ><tr><td width="10%" >
 			<div class="d-sm-none"></div>
-			<div class="hyphenate" id="fnote" style="text-align:justify;">
+			<div class="hyphenate lh-base" id="fnote" style="text-align:justify;">
 				{!! $page->aminfo !!}
 			</div>		
 		</td></tr><tr><td>
@@ -41,23 +40,18 @@
 
 	<!-- MODAL -->
 
-   <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
-	<div class="modal-dialog modal-dialog-scrollable"> 
+<div class="modal fade" id="myModal" tabindex="-1" data-bs-target="#myModal" aria-labelledby="myModalLabel" aria-hidden="true">
+	<div class="modal-dialog" role="document">
 		<div class="modal-content">
 			<div class="modal-body">
-				<div class="container">
-				<div class="row">
-						<!-- <div class="col">
-							<textarea id="name-text"></textarea>
-					</div> -->
-					<div class="row">
-						<div class="col">
-							<textarea id="message-text"></textarea>
+				<div class="container-fluid">
+					<div class="row" style="height:400px";>
+						<textarea id="message-text"></textarea>
+					</div>
+					<div class="modal-footer">
+						<button type="button" class="btn btn-primary" data-bs-dismiss="modal">Close</button>
 					</div>
 				</div>
-			</div>
-			<div class="modal-footer">
-				<button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
 			</div>
 		</div>
 	</div>
@@ -66,21 +60,22 @@
 
 <script>
 	$(function() {
-
+		
 		$('#myModal').on('show.bs.modal', function (event) {
 			
-			var id = $(event.relatedTarget).data('amid')
+			var id = $(event.relatedTarget).data('myid')
 			$.get( "/munrofootnotes/" + id, function( data ) {
 				var fn = $(data).find("#fnote").text()
 				var modal = $('#myModal');
-				modal.find('#message-text').html(fn);
+				modal.find('#message-text').html(fn)
 			});
 			
 		});
 	});
 </script> 
 
-<!-- - - - - -->		
-
+<!-- - - - - -->
 
 @stop
+
+

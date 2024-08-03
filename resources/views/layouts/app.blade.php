@@ -15,11 +15,12 @@
     <link href="https://fonts.googleapis.com/css?family=Raleway:300,400,600" rel="stylesheet" type="text/css">
     <script src="https://code.jquery.com/jquery-3.7.1.min.js" integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
     @vite(['resources/scss/app.scss', 'resources/scss/knox.scss', 'resources/scss/bankgothic_medium.scss','resources/js/app.js', 'resources/js/picturefill.min.js'])
+    <link rel="stylesheet" type="text/css" href="resources/scss/knox.scss">
 
 </head>
 <body>
 <br /><br />
-    <div id="app" style="margin-top:-50px;">
+    <div id="app" style="margin-top:-40px;">
 
         <nav class="navbar navbar-expand-md navbar-light bg-white shadow-sm">
             <div class="mx-auto">
